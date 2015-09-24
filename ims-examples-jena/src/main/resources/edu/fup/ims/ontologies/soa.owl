@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl#"
+    xml:base="http://www.semanticweb.org/ontologies/2010/01/core-soa.owl"
+>
+
+  <!-- ontology -->
+  <owl:Ontology rdf:about=""/>
+  <!-- classes -->
+
+  <owl:Class rdf:ID="Event">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Policy"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+  </owl:Class>
+
+  <owl:Class rdf:ID="InformationType">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Policy"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Effect"/>
+    </owl:disjointWith>
+  </owl:Class>
+
+  <owl:Class rdf:ID="ServiceComposition">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Composition"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Effect">
+    <owl:disjointWith>
+      <owl:Class rdf:about="#Policy"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InformationType"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isSpecifiedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Task">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Policy"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="System"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HumanActor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Service"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Composition"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Element"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="doneBy"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#doneBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#System">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Task"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Service"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Element"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Service">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="System"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Task"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HumanActor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Element"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="hasInterface"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Policy">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InformationType"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Element"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Effect"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Event"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+  </owl:Class>
+
+  <owl:Class rdf:about="#HumanActor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Element"/>
+    </rdfs:subClassOf>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Task"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Service"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Composition">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Task"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="System"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="compositionPattern"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="compositionPattern"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="orchestratedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="orchestratedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#ServiceInterface">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Service"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Effect"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Policy"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HumanActor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Task"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceComposition"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Process"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Event"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="constraints"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#constraints"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Element">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Policy"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</owl:minCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="orchestrates"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#orchestrates"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#ServiceContract">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Policy"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="HumanActor"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Task"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceComposition"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Process"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="Event"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="InformationType"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="legalAspect"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="legalAspect"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="interactionAspect"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#interactionAspect"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isContractFor"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="specifies"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="#Process">
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceContract"/>
+    </owl:disjointWith>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="ServiceInterface"/>
+    </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Composition"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <!-- object properties -->
+
+  <owl:ObjectProperty rdf:about="#isPartyTo">
+    <rdfs:domain rdf:resource="#HumanActor"/>
+    <rdfs:range rdf:resource="#ServiceContract"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="involvesParty">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="isPartyTo"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#orchestratedBy">
+    <rdfs:domain rdf:resource="#Composition"/>
+    <rdfs:range rdf:resource="#Element"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#orchestrates">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="orchestratedBy"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#isContractFor">
+    <rdfs:domain rdf:resource="#ServiceContract"/>
+    <rdfs:range rdf:resource="#Service"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasContract">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isContractFor"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#setsPolicy">
+    <rdfs:domain rdf:resource="#HumanActor"/>
+    <rdfs:range rdf:resource="#Policy"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="isSetBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="setsPolicy"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="generates">
+    <rdfs:domain rdf:resource="#Element"/>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="generatedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="generates"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#represents">
+    <rdfs:domain rdf:resource="#Element"/>
+    <rdfs:range rdf:resource="#Element"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="representedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="represents"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasInput">
+    <rdfs:domain rdf:resource="#ServiceInterface"/>
+    <rdfs:range rdf:resource="#InformationType"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="isInputAt">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasInput"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#doneBy">
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:range rdf:resource="#HumanActor"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="does">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#doneBy"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#specifies">
+    <rdfs:domain rdf:resource="#ServiceContract"/>
+    <rdfs:range rdf:resource="#Effect"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#isSpecifiedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#specifies"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="appliesTo">
+    <rdfs:domain rdf:resource="#Policy"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="isSubjectTo">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="appliesTo"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#hasInterface">
+    <rdfs:domain rdf:resource="#Service"/>
+    <rdfs:range rdf:resource="#ServiceInterface"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="isInterfaceOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasInterface"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="respondsTo">
+    <rdfs:domain rdf:resource="#Element"/>
+    <rdfs:range rdf:resource="#Event"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="respondedToBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="respondsTo"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="performs">
+    <rdfs:domain rdf:resource="#Element"/>
+    <rdfs:range rdf:resource="#Service"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="performedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="performs"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="#uses">
+    <rdfs:domain rdf:resource="#Element"/>
+    <rdfs:range rdf:resource="#Element"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="usedBy">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="uses"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="hasOutput">
+    <rdfs:domain rdf:resource="#ServiceInterface"/>
+    <rdfs:range rdf:resource="#InformationType"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:ID="isOutputAt">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="hasOutput"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+
+  <!-- datatype properties -->
+
+  <owl:DatatypeProperty rdf:about="#legalAspect">
+    <rdfs:domain rdf:resource="#ServiceContract"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#constraints">
+    <rdfs:domain rdf:resource="#ServiceInterface"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#compositionPattern">
+    <rdfs:domain rdf:resource="#Composition"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="#interactionAspect">
+    <rdfs:domain rdf:resource="#ServiceContract"/>
+  </owl:DatatypeProperty>
+
+</rdf:RDF>

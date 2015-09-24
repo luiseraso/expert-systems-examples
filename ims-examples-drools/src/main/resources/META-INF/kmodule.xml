@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <kbase name="KartsKB" packages="ims.fup.rules.karts">
+        <ksession name="KartsKS"/>
+    </kbase>
+    
+    <kbase name="FireKB" packages="ims.fup.rules.fire">
+        <ksession name="FireKS"/>
+    </kbase>
+
+    <kbase name="CashFlowKB" packages="ims.fup.rules.cashflow">
+        <ksession name="CashFlowKS"/>
+    </kbase>   
+    
+</kmodule>

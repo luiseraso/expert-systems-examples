@@ -1,0 +1,3570 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://hl7.org/ontology/SecurityAndPrivacyOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://hl7.org/ontology/SecurityAndPrivacyOntology.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Security and CBCC Work Groups</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/date"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">August 2013</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/subject"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Privacy</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/subject"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Security</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO/TS 21298: Health informatics — Functional and structural roles </Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Healthcare Privacy and Security Classification System (HCS)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/subject"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This ontology currently represents core HL7 Security and Privacy concepts.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy Domain Analysis Model, May, 2010.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">SecurityAndPrivacyOntologyOntology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/language"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">en</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Tony Weida
+Apelon, Inc.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Work in progress.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO/TS 22600 Health informatics – Privilege management and access control, 2006.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">September 2013 ballot</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Authority"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AuthorizationPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BasicSecurityPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clearinghouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Client"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClinicalObservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Compartment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompositeSecurityPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Confidentiality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consenter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Constraint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConstraintCatalog"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConstraintPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataOperation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DelegationPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FunctionalRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grantee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InformationReference"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Integrity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InterorganizationalAgreement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Jurisdiction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#JurisdictionalOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Obligation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObligationPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PaymentSource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Policy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Population"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrivacyConsentDirective"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrivacyOperation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrivacyPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrivacyRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProviderOrganization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PurposeOfUse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Refrain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RefrainPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Route"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensitivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SeparationOfDutyConstraint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServiceDeliveryLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StructuralRole"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubjectOfRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserAssignment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserAssignmentSet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserIdentity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#allowedLoginLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#assignsSecurityRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#assignsUserIdentity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#authorizedByAgreement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#authorizedByLawOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#authorizedByOrganization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#authorizedBySubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#basedOnPrivacyPolicy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#catalogsConstraint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containsSecurityPolicy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#createsObligation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#governsInformationReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#governsOperation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#governsPurposeOfUse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#governsSecurityRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAuthority"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCitizenship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasClinicalObservation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCompartment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConfidentiality"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConsenter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasConstraintCatalog"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCurrentLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCustodian"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInformationCustodian"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIntegrity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasJurisdiction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOrganization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPaymentSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPolicy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrivacyPolicy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrivacyRule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRecipient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRoleSet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSecurityPolicy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSensitivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasServiceDeliveryLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubstituteDecisionMaker"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#includesSecurityRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#includesUserAssignment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isConsenterFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLegalGuardianOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocationForOrganization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isParentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSubstituteDecisionMakerFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesOnInputObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesOnInputOutputObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesOnObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesOnOutputObject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#restrictedToRoute"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#separatesSecurityRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specifiesConstraint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specifiesGrantee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specifiesObligation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specifiesRefrain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#allowedLoginTimeOfDay"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#authenticationLevelOfAssurance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#governsTimeOfDay"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDigitalSignature"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDomainName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEffectiveTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIdentifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPublicationURI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTimeOfTreatment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasWrittenSignatureRecorded"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#levelOfAssurance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#thirdPartyLevelOfAssurance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#usingWorkstationId"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/language"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Authority"/>
+        <ObjectUnionOf>
+            <Class IRI="#JurisdictionalOrganization"/>
+            <Class IRI="#ProviderOrganization"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Client"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+                <Class IRI="#PrivacyConsentDirective"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Consenter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#isConsenterFor"/>
+                <Class IRI="#Client"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Consenter"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#hasConsenter"/>
+                </ObjectInverseOf>
+                <Class IRI="#PrivacyConsentDirective"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ConstraintPolicy"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+                <Class IRI="#CompositeSecurityPolicy"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#specifiesConstraint"/>
+                <Class IRI="#Constraint"/>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#specifiesConstraint"/>
+                <Class IRI="#Constraint"/>
+            </ObjectMinCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+                <Class IRI="#CompositeSecurityPolicy"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DelegationPolicy"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#specifiesGrantee"/>
+                <Class IRI="#Grantee"/>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#specifiesGrantee"/>
+                <Class IRI="#Grantee"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Grantee"/>
+        <ObjectIntersectionOf>
+            <ObjectUnionOf>
+                <Class IRI="#Clearinghouse"/>
+                <Class IRI="#Person"/>
+                <Class IRI="#ProviderOrganization"/>
+            </ObjectUnionOf>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#specifiesGrantee"/>
+                </ObjectInverseOf>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#JurisdictionalOrganization"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Organization"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasJurisdiction"/>
+                <Class IRI="#Jurisdiction"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasJurisdiction"/>
+                <Class IRI="#Jurisdiction"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ObligationPolicy"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#specifiesObligation"/>
+                <Class IRI="#Obligation"/>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#specifiesObligation"/>
+                <Class IRI="#Obligation"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RefrainPolicy"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#specifiesRefrain"/>
+                <Class IRI="#Refrain"/>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#specifiesRefrain"/>
+                <Class IRI="#Refrain"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SeparationOfDutyConstraint"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Constraint"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#separatesSecurityRole"/>
+                <Class IRI="#SecurityRole"/>
+            </ObjectAllValuesFrom>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#separatesSecurityRole"/>
+                <Class IRI="#SecurityRole"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SubjectOfRecord"/>
+        <ObjectIntersectionOf>
+            <ObjectUnionOf>
+                <Class IRI="#Person"/>
+                <Class IRI="#Population"/>
+            </ObjectUnionOf>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectInverseOf>
+                    <ObjectProperty IRI="#hasSubject"/>
+                </ObjectInverseOf>
+                <Class IRI="#InformationReference"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AuthorizationPolicy"/>
+        <Class IRI="#BasicSecurityPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <Class IRI="#SecurityPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsInformationReference"/>
+            <Class IRI="#InformationReference"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsOperation"/>
+            <Class IRI="#Operation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsPurposeOfUse"/>
+            <Class IRI="#PurposeOfUse"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsSecurityRole"/>
+            <Class IRI="#SecurityRole"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#restrictedToRoute"/>
+            <Class IRI="#Route"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#authenticationLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#governsTimeOfDay"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;integer">86400</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;integer">0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#thirdPartyLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#governsTimeOfDay"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;integer">86400</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;integer">0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#authenticationLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#thirdPartyLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clearinghouse"/>
+        <Class IRI="#Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <Class IRI="#SecurityPolicy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#BasicSecurityPolicy"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#BasicSecurityPolicy"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#AuthorizationPolicy"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#ConstraintPolicy"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#DelegationPolicy"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#ObligationPolicy"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompositeSecurityPolicy"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#containsSecurityPolicy"/>
+            <Class IRI="#RefrainPolicy"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consenter"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasWrittenSignatureRecorded"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConstraintCatalog"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#catalogsConstraint"/>
+            <Class IRI="#Constraint"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataOperation"/>
+        <Class IRI="#Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FunctionalRole"/>
+        <Class IRI="#SecurityRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthRecord"/>
+        <Class IRI="#Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasClinicalObservation"/>
+            <Class IRI="#ClinicalObservation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCompartment"/>
+            <Class IRI="#Compartment"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasConfidentiality"/>
+            <Class IRI="#Confidentiality"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCustodian"/>
+            <Class IRI="#ProviderOrganization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasIntegrity"/>
+            <Class IRI="#Integrity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasObject"/>
+            <Class IRI="#Object"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPaymentSource"/>
+            <Class IRI="#PaymentSource"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasRecipient"/>
+            <Class IRI="#Organization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSensitivity"/>
+            <Class IRI="#Sensitivity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubject"/>
+            <Class IRI="#SubjectOfRecord"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InformationReference"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasTimeOfTreatment"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InterorganizationalAgreement"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasOrganization"/>
+            <Class IRI="#Organization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InterorganizationalAgreement"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasOrganization"/>
+            <Class IRI="#Organization"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isLocationForOrganization"/>
+            <Class IRI="#Organization"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isLocationForOrganization"/>
+            <Class IRI="#Organization"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#operatesOnObject"/>
+            <Class IRI="#Object"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Operation"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#operatesOnObject"/>
+            <Class IRI="#Object"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasConstraintCatalog"/>
+            <Class IRI="#ConstraintCatalog"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPolicy"/>
+            <Class IRI="#Policy"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPrivacyPolicy"/>
+            <Class IRI="#PrivacyPolicy"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasRoleSet"/>
+            <Class IRI="#RoleSet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSecurityPolicy"/>
+            <Class IRI="#SecurityPolicy"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasUserAssignmentSet"/>
+            <Class IRI="#UserAssignmentSet"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasConstraintCatalog"/>
+            <Class IRI="#ConstraintCatalog"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasRoleSet"/>
+            <Class IRI="#RoleSet"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasUserAssignmentSet"/>
+            <Class IRI="#UserAssignmentSet"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDigitalSignature"/>
+            <Datatype abbreviatedIRI="xsd:base64Binary"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDomainName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organization"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCitizenship"/>
+            <Class IRI="#Jurisdiction"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+            <Class IRI="#PrivacyConsentDirective"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDigitalSignature"/>
+            <Datatype abbreviatedIRI="xsd:base64Binary"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasAuthority"/>
+            <Class IRI="#Authority"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasAuthority"/>
+            <Class IRI="#Authority"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasEffectiveTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasPublicationURI"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasEffectiveTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasPublicationURI"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#basedOnPrivacyPolicy"/>
+            <Class IRI="#PrivacyPolicy"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasConsenter"/>
+            <Class IRI="#Person"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPrivacyRule"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasSubjectOfConsent"/>
+            <Class IRI="#Client"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasPrivacyRule"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubjectOfConsent"/>
+            <Class IRI="#Client"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasEffectiveTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasPublicationURI"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasEffectiveTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasPublicationURI"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyOperation"/>
+        <Class IRI="#Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyOperation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#authorizedBy"/>
+            <ObjectUnionOf>
+                <Class IRI="#InterorganizationalAgreement"/>
+                <Class IRI="#Jurisdiction"/>
+                <Class IRI="#Organization"/>
+                <Class IRI="#Person"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyPolicy"/>
+        <Class IRI="#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPrivacyRule"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyPolicy"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#specifiesGrantee"/>
+            <Class IRI="#Grantee"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyPolicy"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasPrivacyRule"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#createsObligation"/>
+            <Class IRI="#Obligation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsInformationReference"/>
+            <Class IRI="#InformationReference"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsOperation"/>
+            <Class IRI="#Operation"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsPurposeOfUse"/>
+            <Class IRI="#PurposeOfUse"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#governsSecurityRole"/>
+            <Class IRI="#SecurityRole"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#governsOperation"/>
+            <Class IRI="#Operation"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#governsSecurityRole"/>
+            <Class IRI="#SecurityRole"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasEffectiveTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrivacyRule"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasEffectiveTime"/>
+            <Datatype abbreviatedIRI="xsd:dateTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProviderOrganization"/>
+        <Class IRI="#Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RoleSet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#includesSecurityRole"/>
+            <Class IRI="#SecurityRole"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityPolicy"/>
+        <Class IRI="#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityRole"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityRole"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServiceDeliveryLocation"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StructuralRole"/>
+        <Class IRI="#SecurityRole"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserAssignment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#assignsSecurityRole"/>
+            <Class IRI="#SecurityRole"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserAssignment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#assignsUserIdentity"/>
+            <Class IRI="#UserIdentity"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserAssignment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#assignsUserIdentity"/>
+            <Class IRI="#UserIdentity"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserAssignmentSet"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#includesUserAssignment"/>
+            <Class IRI="#UserAssignment"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#allowedLoginLocation"/>
+            <Class IRI="#Location"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasCurrentLocation"/>
+            <Class IRI="#Location"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#allowedLoginTimeOfDay"/>
+            <DatatypeRestriction>
+                <Datatype abbreviatedIRI="xsd:integer"/>
+                <FacetRestriction facet="&xsd;maxInclusive">
+                    <Literal datatypeIRI="&xsd;integer">86400</Literal>
+                </FacetRestriction>
+                <FacetRestriction facet="&xsd;minInclusive">
+                    <Literal datatypeIRI="&xsd;integer">0</Literal>
+                </FacetRestriction>
+            </DatatypeRestriction>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#authenticationLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#usingWorkstationId"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasIdentifier"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#authenticationLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserIdentity"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AuthorizationPolicy"/>
+        <Class IRI="#ConstraintPolicy"/>
+        <Class IRI="#DelegationPolicy"/>
+        <Class IRI="#ObligationPolicy"/>
+        <Class IRI="#RefrainPolicy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BasicSecurityPolicy"/>
+        <Class IRI="#CompositeSecurityPolicy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Clearinghouse"/>
+        <Class IRI="#ProviderOrganization"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ClinicalObservation"/>
+        <Class IRI="#Compartment"/>
+        <Class IRI="#Confidentiality"/>
+        <Class IRI="#Constraint"/>
+        <Class IRI="#ConstraintCatalog"/>
+        <Class IRI="#InformationReference"/>
+        <Class IRI="#Integrity"/>
+        <Class IRI="#InterorganizationalAgreement"/>
+        <Class IRI="#Jurisdiction"/>
+        <Class IRI="#Location"/>
+        <Class IRI="#Object"/>
+        <Class IRI="#Obligation"/>
+        <Class IRI="#Operation"/>
+        <Class IRI="#Organization"/>
+        <Class IRI="#PaymentSource"/>
+        <Class IRI="#Person"/>
+        <Class IRI="#Policy"/>
+        <Class IRI="#Population"/>
+        <Class IRI="#PrivacyConsentDirective"/>
+        <Class IRI="#PrivacyRule"/>
+        <Class IRI="#PurposeOfUse"/>
+        <Class IRI="#Refrain"/>
+        <Class IRI="#RoleSet"/>
+        <Class IRI="#Route"/>
+        <Class IRI="#SecurityRole"/>
+        <Class IRI="#Sensitivity"/>
+        <Class IRI="#UserAssignment"/>
+        <Class IRI="#UserAssignmentSet"/>
+        <Class IRI="#UserIdentity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DataOperation"/>
+        <Class IRI="#PrivacyOperation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FunctionalRole"/>
+        <Class IRI="#StructuralRole"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PrivacyPolicy"/>
+        <Class IRI="#SecurityPolicy"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#authorizedByAgreement"/>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#authorizedByLawOf"/>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#authorizedByOrganization"/>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#authorizedBySubject"/>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasConsenter"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOrganization"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrivacyPolicy"/>
+        <ObjectProperty IRI="#hasPolicy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSecurityPolicy"/>
+        <ObjectProperty IRI="#hasPolicy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+        <ObjectProperty IRI="#hasSubject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubstituteDecisionMaker"/>
+        <ObjectProperty IRI="#hasConsenter"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isConsenterFor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isLegalGuardianOf"/>
+        <ObjectProperty IRI="#isConsenterFor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isParentOf"/>
+        <ObjectProperty IRI="#isConsenterFor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSubstituteDecisionMakerFor"/>
+        <ObjectProperty IRI="#isConsenterFor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#operatesOnInputObject"/>
+        <ObjectProperty IRI="#operatesOnObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#operatesOnInputOutputObject"/>
+        <ObjectProperty IRI="#operatesOnInputObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#operatesOnInputOutputObject"/>
+        <ObjectProperty IRI="#operatesOnOutputObject"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#operatesOnOutputObject"/>
+        <ObjectProperty IRI="#operatesOnObject"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPolicy"/>
+        <ObjectProperty IRI="#hasAuthority"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#assignsUserIdentity"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasConfidentiality"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasConstraintCatalog"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRoleSet"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasUserAssignmentSet"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#allowedLoginLocation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#assignsSecurityRole"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#assignsUserIdentity"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#authorizedByAgreement"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#authorizedByLawOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#authorizedByOrganization"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#authorizedBySubject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#basedOnPrivacyPolicy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#catalogsConstraint"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#containsSecurityPolicy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#createsObligation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#governsInformationReference"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#governsOperation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#governsPurposeOfUse"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#governsSecurityRole"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAuthority"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCitizenship"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasClinicalObservation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCompartment"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasConfidentiality"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasConsenter"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasConstraintCatalog"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCurrentLocation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasCustodian"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasInformationCustodian"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasIntegrity"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasJurisdiction"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasObject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasOrganization"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPaymentSource"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPolicy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyPolicy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyRule"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasRecipient"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasRoleSet"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSecurityPolicy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSensitivity"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasServiceDeliveryLocation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSubject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasUserAssignmentSet"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#includesSecurityRole"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#includesUserAssignment"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isConsenterFor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isLocationForOrganization"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#operatesOnInputObject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#operatesOnInputOutputObject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#operatesOnObject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#operatesOnOutputObject"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#restrictedToRoute"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#separatesSecurityRole"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#specifiesConstraint"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#specifiesGrantee"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#specifiesObligation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#specifiesRefrain"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#allowedLoginLocation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#assignsSecurityRole"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#assignsUserIdentity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#authorizedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#authorizedByAgreement"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#authorizedByLawOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#authorizedByOrganization"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#authorizedBySubject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#basedOnPrivacyPolicy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#catalogsConstraint"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#containsSecurityPolicy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#createsObligation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#governsInformationReference"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#governsOperation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#governsPurposeOfUse"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#governsSecurityRole"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasAuthority"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCitizenship"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasClinicalObservation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCompartment"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasConfidentiality"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasConsenter"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasConstraintCatalog"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCurrentLocation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasCustodian"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasIntegrity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasJurisdiction"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasObject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasOrganization"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasPaymentSource"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasPolicy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyPolicy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasPrivacyRule"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasRecipient"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasRoleSet"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSecurityPolicy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSensitivity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasServiceDeliveryLocation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSubject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasUserAssignmentSet"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#includesSecurityRole"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#includesUserAssignment"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isConsenterFor"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isLocationForOrganization"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#operatesOnInputObject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#operatesOnInputOutputObject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#operatesOnObject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#operatesOnOutputObject"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#restrictedToRoute"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#separatesSecurityRole"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#specifiesConstraint"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#specifiesGrantee"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#specifiesObligation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#specifiesRefrain"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#allowedLoginLocation"/>
+        <Class IRI="#UserIdentity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#assignsSecurityRole"/>
+        <Class IRI="#UserAssignment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#assignsUserIdentity"/>
+        <Class IRI="#UserAssignment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#authorizedBy"/>
+        <Class IRI="#PrivacyOperation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#basedOnPrivacyPolicy"/>
+        <Class IRI="#PrivacyConsentDirective"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#catalogsConstraint"/>
+        <Class IRI="#ConstraintCatalog"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+        <Class IRI="#ConstraintPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#containsSecurityPolicy"/>
+        <Class IRI="#CompositeSecurityPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#createsObligation"/>
+        <Class IRI="#PrivacyRule"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#governsInformationReference"/>
+        <ObjectUnionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#governsOperation"/>
+        <ObjectUnionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#governsPurposeOfUse"/>
+        <ObjectUnionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#governsSecurityRole"/>
+        <ObjectUnionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAuthority"/>
+        <Class IRI="#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCitizenship"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasClinicalObservation"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCompartment"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConfidentiality"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConsenter"/>
+        <Class IRI="#PrivacyConsentDirective"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasConstraintCatalog"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCurrentLocation"/>
+        <Class IRI="#UserIdentity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCustodian"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIntegrity"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasJurisdiction"/>
+        <Class IRI="#JurisdictionalOrganization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasObject"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOrganization"/>
+        <Class IRI="#InterorganizationalAgreement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPaymentSource"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPolicy"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrivacyPolicy"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrivacyRule"/>
+        <ObjectUnionOf>
+            <Class IRI="#PrivacyConsentDirective"/>
+            <Class IRI="#PrivacyPolicy"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRecipient"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRoleSet"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSecurityPolicy"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSensitivity"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasServiceDeliveryLocation"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubject"/>
+        <ObjectUnionOf>
+            <Class IRI="#InformationReference"/>
+            <Class IRI="#PrivacyConsentDirective"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+        <Class IRI="#PrivacyConsentDirective"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUserAssignmentSet"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includesSecurityRole"/>
+        <Class IRI="#RoleSet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includesUserAssignment"/>
+        <Class IRI="#UserAssignmentSet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isConsenterFor"/>
+        <Class IRI="#Consenter"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLocationForOrganization"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operatesOnObject"/>
+        <Class IRI="#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#restrictedToRoute"/>
+        <Class IRI="#BasicSecurityPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#separatesSecurityRole"/>
+        <Class IRI="#SeparationOfDutyConstraint"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#specifiesConstraint"/>
+        <Class IRI="#ConstraintPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#specifiesGrantee"/>
+        <ObjectUnionOf>
+            <Class IRI="#DelegationPolicy"/>
+            <Class IRI="#PrivacyPolicy"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#specifiesObligation"/>
+        <Class IRI="#ObligationPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#specifiesRefrain"/>
+        <Class IRI="#RefrainPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#allowedLoginLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#assignsSecurityRole"/>
+        <Class IRI="#SecurityRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#assignsUserIdentity"/>
+        <Class IRI="#UserIdentity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#authorizedBy"/>
+        <ObjectUnionOf>
+            <Class IRI="#InterorganizationalAgreement"/>
+            <Class IRI="#Jurisdiction"/>
+            <Class IRI="#Organization"/>
+            <Class IRI="#Person"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#authorizedByAgreement"/>
+        <Class IRI="#InterorganizationalAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#authorizedByLawOf"/>
+        <Class IRI="#Jurisdiction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#authorizedByOrganization"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#authorizedBySubject"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#basedOnPrivacyPolicy"/>
+        <Class IRI="#PrivacyPolicy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#catalogsConstraint"/>
+        <Class IRI="#Constraint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#constrainsSecurityPolicy"/>
+        <Class IRI="#CompositeSecurityPolicy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#containsSecurityPolicy"/>
+        <Class IRI="#BasicSecurityPolicy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#createsObligation"/>
+        <Class IRI="#Obligation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#governsInformationReference"/>
+        <Class IRI="#InformationReference"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#governsOperation"/>
+        <Class IRI="#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#governsPurposeOfUse"/>
+        <Class IRI="#PurposeOfUse"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#governsSecurityRole"/>
+        <Class IRI="#SecurityRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAuthority"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCitizenship"/>
+        <Class IRI="#Jurisdiction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasClinicalObservation"/>
+        <Class IRI="#ClinicalObservation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCompartment"/>
+        <Class IRI="#Compartment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConfidentiality"/>
+        <Class IRI="#Confidentiality"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConsenter"/>
+        <Class IRI="#Consenter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasConstraintCatalog"/>
+        <Class IRI="#ConstraintCatalog"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCurrentLocation"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCustodian"/>
+        <Class IRI="#ProviderOrganization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIntegrity"/>
+        <Class IRI="#Integrity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasJurisdiction"/>
+        <Class IRI="#Jurisdiction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOrganization"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPaymentSource"/>
+        <Class IRI="#PaymentSource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicy"/>
+        <Class IRI="#Policy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrivacyConsentDirective"/>
+        <Class IRI="#PrivacyConsentDirective"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrivacyPolicy"/>
+        <Class IRI="#PrivacyPolicy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrivacyRule"/>
+        <Class IRI="#PrivacyRule"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRecipient"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRoleSet"/>
+        <Class IRI="#RoleSet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSecurityPolicy"/>
+        <Class IRI="#SecurityPolicy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSensitivity"/>
+        <Class IRI="#Sensitivity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasServiceDeliveryLocation"/>
+        <Class IRI="#ServiceDeliveryLocation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubject"/>
+        <ObjectUnionOf>
+            <Class IRI="#Person"/>
+            <Class IRI="#Population"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubjectOfConsent"/>
+        <Class IRI="#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUserAssignmentSet"/>
+        <Class IRI="#UserAssignmentSet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includesSecurityRole"/>
+        <Class IRI="#SecurityRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includesUserAssignment"/>
+        <Class IRI="#UserAssignment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isConsenterFor"/>
+        <Class IRI="#Client"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLocationForOrganization"/>
+        <Class IRI="#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operatesOnObject"/>
+        <Class IRI="#Object"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#restrictedToRoute"/>
+        <Class IRI="#Route"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#separatesSecurityRole"/>
+        <Class IRI="#SecurityRole"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#specifiesConstraint"/>
+        <Class IRI="#Constraint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#specifiesGrantee"/>
+        <Class IRI="#Grantee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#specifiesObligation"/>
+        <Class IRI="#Obligation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#specifiesRefrain"/>
+        <Class IRI="#Refrain"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#authenticationLevelOfAssurance"/>
+        <DataProperty IRI="#levelOfAssurance"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+        <DataProperty IRI="#levelOfAssurance"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#thirdPartyLevelOfAssurance"/>
+        <DataProperty IRI="#levelOfAssurance"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#allowedLoginTimeOfDay"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#authenticationLevelOfAssurance"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#governsTimeOfDay"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasEffectiveTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPublicationURI"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasTimeOfTreatment"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasWrittenSignatureRecorded"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#identityProofingLevelOfAssurance"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#thirdPartyLevelOfAssurance"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#allowedLoginTimeOfDay"/>
+        <Class IRI="#UserIdentity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#governsTimeOfDay"/>
+        <Class IRI="#BasicSecurityPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDigitalSignature"/>
+        <ObjectUnionOf>
+            <Class IRI="#Organization"/>
+            <Class IRI="#Person"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDomainName"/>
+        <Class IRI="#Organization"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEffectiveTime"/>
+        <ObjectUnionOf>
+            <Class IRI="#Policy"/>
+            <Class IRI="#PrivacyConsentDirective"/>
+            <Class IRI="#PrivacyRule"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasIdentifier"/>
+        <ObjectUnionOf>
+            <Class IRI="#Object"/>
+            <Class IRI="#Organization"/>
+            <Class IRI="#Person"/>
+            <Class IRI="#Policy"/>
+            <Class IRI="#PrivacyConsentDirective"/>
+            <Class IRI="#UserIdentity"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <ObjectUnionOf>
+            <Class IRI="#Organization"/>
+            <Class IRI="#Person"/>
+            <Class IRI="#Policy"/>
+            <Class IRI="#SecurityRole"/>
+            <Class IRI="#UserIdentity"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPublicationURI"/>
+        <ObjectUnionOf>
+            <Class IRI="#Policy"/>
+            <Class IRI="#PrivacyConsentDirective"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTimeOfTreatment"/>
+        <Class IRI="#InformationReference"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasWrittenSignatureRecorded"/>
+        <Class IRI="#Consenter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#levelOfAssurance"/>
+        <ObjectUnionOf>
+            <Class IRI="#BasicSecurityPolicy"/>
+            <Class IRI="#UserIdentity"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#thirdPartyLevelOfAssurance"/>
+        <Class IRI="#BasicSecurityPolicy"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#usingWorkstationId"/>
+        <Class IRI="#UserIdentity"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#allowedLoginTimeOfDay"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;integer">86400</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#governsTimeOfDay"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;integer">86400</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDigitalSignature"/>
+        <Datatype abbreviatedIRI="xsd:base64Binary"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDomainName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEffectiveTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIdentifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPublicationURI"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTimeOfTreatment"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasWrittenSignatureRecorded"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#levelOfAssurance"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#usingWorkstationId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Authority</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An authority is an organization (either Jurisdictional or Provider) that is responsible for a Privacy Policy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Authority</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Authority</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">According to the CSP-DAM: &apos;This abstract class is used to designate the authority that issues the policy.&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#AuthorizationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An authorization policy defines allowed actions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#AuthorizationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#BasicSecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A basic security policy serves as a common basis for more specific types of security policies, for example authorization, delegation, obligation and refrain policies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#BasicSecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Clearinghouse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A clearinghouse is an organization that collects, classifies and/or distributes (healthcare) information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Clearinghouse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Clearinghouse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Description derived from Merriam Webster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Clearinghouse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Mentioned in text of CSP-DAM though not specified there as a class.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Client</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A client is a person who is the subject of a consent directive. [HL7 CSP-DAM]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Client</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Client</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The definition of Client is debatable.  On the other han</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Client</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">a client with no consent directive arguably has no impact on access control.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#ClinicalObservation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">As a part of the service they provide to patients, medical doctors, nurses and allied health workers compile notes that document the conditions they encounter, the treatments provided and the outcomes of those treatments. [U.S. National Library of Medicine; http://www.nlm.nih.gov/nichsr/usestats/clinical_observation.html; Retrieved on July 29, 2013]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#ClinicalObservation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 HCS</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClinicalObservation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ClinicalObservation is a generalization of the ClinicalCondition class from the HL7 CSP-DAM.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ClinicalObservation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of ClinicalObservation are specified in ClinicalObservationOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Compartment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A compartment is a security label tag that &quot;segments&quot; an IT resource by indicating that access and use is restricted to members of a defined community or project.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Compartment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Healthcare Privacy and Security Classification System (HCS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#CompositeSecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A composite security policy combines other policies (authorization, constraint, delegation, obligation, and/or refrain policies).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#CompositeSecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Confidentiality</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Confidentiality is the property that information is not made available or disclosed to unauthorized individuals. [per ISO 7498-2:1989]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Confidentiality</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM, which cites ISO 7498-2:1989.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Confidentiality</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Confidentiality are specified in ConfidentialityOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Consenter</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A Consenter is a person who is an individual client of healthcare services or a client delegate (Substitute Decision Maker) that uses a computer system to manage client privacy consent directives.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Consenter</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Constraint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A constraint is a restriction (condition or obligation) that is enforced upon access permissions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Constraint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ANSI/INCITS 359-2004</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Constraint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">In the future, subclasses of Constraint may be moved to a separate sub-ontology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#ConstraintCatalog</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A constraint catalog is a collection of constraints on permissions (as specified by an organization).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#ConstraintCatalog</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 RBAC Constraint Catalog</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#ConstraintPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A constraint policy places constraints on another policy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#ConstraintPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#DataOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The DataOperation class categorizes operations from the perspective of their effect on object(s).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#DataOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of DataOperation are specified in CRUDEA_OperationOntology.owl and in turn in DataOperationOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#DelegationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A delegation policy defines what authorizations can be delegated to whom.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#DelegationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#FunctionalRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A functional role reflects functional aspects of relationships between entities. Functional roles are bound to the realization/performance of acts.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#FunctionalRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FunctionalRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">[taken from HL7 RBAC Role Engineering Process:] Functional Roles consist of all the permissions (operations on health information system objects) needed to perform a task.  Functional role names are associated with groups of permissions for convenience in assigning to users.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Grantee</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A grantee is a person or organization given privilege(s), e.g., by a delegation policy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Grantee</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#HealthRecord</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A health record stores healthcare information about a person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#HealthRecord</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An information reference is a specification of the attributes of protected information referenced by a policy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Perhaps rename properties of InformationReference from hasClinicalObservatio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">etc.  That would increase specificity and promote recognition of these properties within the list of all properties.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">etc. to referencesClinicalObservation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">hasConfidentiality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">referencesConfidentiality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Integrity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Integrity is the attribute that information is not altered in any way, deliberately or accidentally.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Integrity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Integrity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Made a meaningless change in the wording of the ISO definition, from &apos;property&apos; to &apos;attribute&apos; to avoid confusion with OWL properties.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Integrity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Integrity are specified in IntegrityOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#InterorganizationalAgreement</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An interorganizational agreement specifies (security and privacy) arrangements among organizations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#InterorganizationalAgreement</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&apos;Refrain Policy Vocabulary&apos; presentation to HL7 Security WG by Kathleen Connor in November 2011.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Jurisdiction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A jurisdiction is an area with a set of laws under the control of a system of courts which are different to neighboring areas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Jurisdiction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Jurisdiction</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">In the future, instances of Jurisdiction may be defined in a separate sub-ontology.  For now, sample instances  are included within SomewhereHospitalOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#JurisdictionalOrganization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A jurisdictional organization is an organization that has territorial authority.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#JurisdictionalOrganization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Location</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A location is a site (such as a physical place or a system, workstation or terminal in a network).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Location</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">It is expected that specific organizations will create and maintain their own subclasses and instances of Location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Should an Organization have a LocationSet to capture the locations which it may use in policies to control access?</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Object</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An object is an entity that contains or receives information.  An object can represent information containers (e.g., files or directories in an operating system, and/or columns, rows, tables, and views within a database management system) or objects can represent exhaustible system resources, such as printers, disk space, and CPU cycles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Object</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 RBAC (based on ANSI/INCITS 359-2004)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Object</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Object are specified in ObjectOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Obligation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An obligation represents a resposibility to follow a course of action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Obligation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Obligation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Obligation are specified in ObligationOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#ObligationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An obligation policy is event-triggered and defines actions to be performed by manager agents.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#ObligationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ObligationPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2 describes obligation policy in terms of manager agents but says nothing about the latter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Operation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">To operate is to act on an object or objects.  An operation is an executable image of a program, which upon invocation executes some function for the user.  Within a file system, operations might include read, write, and execute.  Within a database management system, operations might include append, delete, and update.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Operation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Operation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">For the Security and Privacy Ontology in general, we have adopted &apos;CamelCase&apos; naming which differd slightly from the HL7 RBAC Permission Catalog and from the HL7 vocabulary repository (which also differ from each other).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An organization is an administrative and/or functional entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">In the Composite Security and Privacy DAM, a generalization of JurisdictionalOrganization and ProviderOrganization is named &apos;Authority&apos;.  However, ISO 22600-2 defines Authority as &apos;entity that is responsible for the issuance of certificates&apos;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">It is expected that specific organizations will create and maintain their own subontology which imports SecurityAndPrivacyOntology.owl along with some or all of the accompanying subontologies and adds suitable local instances of classes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Organization has exactly one role set per conversation with M. Davis et al., 08/24/2010.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Textual description derived from Merriam Webster.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PaymentSource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A payment source is the provider of payment for the healthcare services documented by electronic health records.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#PaymentSource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PaymentSource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of PaymentSource are specified in PaymentSourceOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PaymentSource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The CSP-DAM names the class PolicyProgramPaymentSource but its decription is strictly in terms of payment.  At least raise this as an issue with the CSP-DAM.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Person</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A person is a human being.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Person</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">De novo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Person</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Obvious generalization of Client, Consenter and similar classes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Policy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A policy is a set of legal, political, organizational, functional and technical obligations or omissions for communication and cooperation.  [ISO 22600-2]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Policy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Population</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A population is a subject of privacy policy or consent which is a body of persons or individuals having a quality or characteristic in common.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Population</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PrivacyConsentDirective</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A privacy consent directive is special policy which defines an agreement between an entity playing the role of the subject of an act and an entity acting. [ISO 22600-3]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#PrivacyConsentDirective</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PrivacyConsentDirective</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">According to the CSP-DAM: &apos;A Privacy Consent Directive is defined as &apos;an instruction regarding consent and contextual conditions to collect, use, and/or disclose Personal Health Information.&apos; This definition is adapted from the British Columbia, E-Health (Personal Health Information Access and Protection of Privacy) Act, S.B.C. 2008, c. 38, s. 1.&apos;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PrivacyOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The PrivacyOperation class categorizes operations from the perspective of their effect on the privacy of (health) information.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#PrivacyOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PrivacyOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of PrivacyOperation are specified in PrivacyOperationOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PrivacyPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A privacy policy is a policy that is concerned with information privacy practices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#PrivacyPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PrivacyRule</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A privacy rule specifies permission or obligation to treat information in accord with privacy wishes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#PrivacyRule</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#ProviderOrganization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A provider organization is an organization that furnishes healthcare.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#ProviderOrganization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#PurposeOfUse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A purpose of use is an intention for which an object is accessed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#PurposeOfUse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PurposeOfUse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of PurposeOfUse are specified in PurposeOfUseOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Refrain</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A refrain represents a responsibility to not follow a course of action.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Refrain</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 v3 RefrainPolicy value set.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Refrain</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Refrain are specified in RefrainOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#RefrainPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A refrain policy is a policy used to indicate that a specific action is prohibited based on specific access control attributes (e.g., purpose of use, information type, user role, etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#RefrainPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#RoleSet</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A role set is a collection of roles (as specified by an organization).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#RoleSet</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">De novo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Route</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A route is a sequence of links, and/or partial links, that describe a path, usually between two positions, within a network [ISO 19133:2005] [ISO 19134:2007, 4.11]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Route</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Route</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Route are specified in RouteOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#SecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A security policy is a policy that is concerned with information security practices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#SecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A set of rules that constrains one or more sets of activities of one or more sets of objects [ISO/IEC 10746-3]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#SecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The Composite Security and Privacy DAM has a class named &apos;Policy&apos; but refers in text to the more specific notion of &apos;Security Policy&apos;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#SecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A role is set of competences and/or performances that are associated with a task.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#SecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO/TS 21298:2008(E) and ANSI/INCITS 359-2004</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">&apos;Role&apos; is considered a synonym for this &apos;SecurityRole&apos; class per the 08/24/2010 meeting of the Security WG.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Roles provide a means of indirectly assigning privileges to individuals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of SecurityRole are specified in RoleOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#Sensitivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Sensitivity specifies the characteristic of a resource which implies its value or importance, and may include its vulnerability [ISO 7498-2:1989]. Vulnerability here is defined as medically vulnerable with respect to privacy, subject to social stigmatization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#Sensitivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 7498-2:1989</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sensitivity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of Sensitivity are specified in SensitivityOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#SeparationOfDutyConstraint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A separation of duty constraint is a constraint that defines exclusivity relations among roles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#SeparationOfDutyConstraint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ANSI/INCITS 359-2004</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#ServiceDeliveryLocation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#ServiceDeliveryLocation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 v3 ServiceDeliveryLocationRoleType value set</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ServiceDeliveryLocation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Subclasses of ServiceDeliveryLocation are specified in ServiceDeliveryLocationOntology.owl.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#StructuralRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A structural role reflects the structural aspects of relationships between entities.  Structural roles describe prerequisites, feasibilities or competences for acts.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#StructuralRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ISO 22600-2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StructuralRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">According to the HL7 CSP-DAM: A structural role is a security role that places a user in an organizational hierarchy as belonging to a category of healthcare personnel warranting certain levels of access control: Structural roles allow users to participate in the organization’s workflow (e.g., tasks) by job, title, or position, but do not specify detailed permissions on specific information objects.  Structural roles allow a user to “connect” to a resource, but do not grant authorizations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#SubjectOfRecord</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A subject of [a] record is a person or population described by a health record (record object).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#SubjectOfRecord</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#UserAssignment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A user assignment is an association of a user with role(s) he or she is allowed to assume.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#UserAssignment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">ANSI/INCITS 359-2004</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserAssignment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">It is expected that specific organizations will create and maintain their own instances of UserAssignment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#UserAssignmentSet</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A user assignment set is a collection of assignments of users to roles (as specified by an organization).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#UserAssignmentSet</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">De novo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#UserIdentity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A user identity is the representation of a human being in an information system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/source"/>
+        <IRI>#UserIdentity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">HL7 Composite Security and Privacy DAM</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#assignsSecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes role(s) subject to assignment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#assignsUserIdentity</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes user(s) subject to assignment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#authorizedByAgreement</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">May eliminate this specialization of the authorizedBy property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#authorizedByLawOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">May eliminate this specialization of the authorizedBy property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#authorizedByOrganization</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">May eliminate this specialization of the authorizedBy property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#authorizedBySubject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">May eliminate this specialization of the authorizedBy property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#catalogsConstraint</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes constraint(s) within the scope of a catalog.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#constrainsSecurityPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Relates a constraint policy to a policy it constrains.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#governsInformationReference</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes exercise of control over a type of information reference.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#governsOperation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Exercises control over a type of operation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#governsPurposeOfUse</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes exercise of control for a purpose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#governsSecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes exercise of control over a type of role.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#hasConstraintCatalog</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes constraint catalog(s) posessed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#hasPolicy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes policy or policies possessed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#hasPrivacyRule</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes privacy rule(s) posessed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPublicationURI</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Intended to capture the web location where the document in question is published for human consumption, as opposed to the URI of this ontology element.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#hasRoleSet</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes set(s) of roles posessed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#hasUserAssignmentSet</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes user assignment(s) posessed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#includesSecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes role(s) included within a set.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#includesUserAssignment</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes user assignment(s) included within a set.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#operatesOnInputObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes input object(s) operated on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#operatesOnInputOutputObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes input-output object(s) operated on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#operatesOnObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes object(s) operated on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#operatesOnOutputObject</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes output object(s) operated on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/description"/>
+        <IRI>#separatesSecurityRole</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Describes roles separated by constraints (in the sense of Role Based Access Control), e.g., for separation of duty reasona.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

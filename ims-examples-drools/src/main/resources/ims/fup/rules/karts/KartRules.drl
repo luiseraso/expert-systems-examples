@@ -1,0 +1,35 @@
+package edu.fup.ims.examples.karts;
+dialect  "mvel"
+
+//R1: Se activa cuando hay al menos un objeto de la clase carro en la memoria de trabajo
+rule "R1 - Objeto Kart"
+    when
+        $kart : Kart()
+    then
+        System.out.println("R1: El Kart tipo " + $kart.type +" se encuentra en la memoria de trabajo." );
+end
+
+//R2: Se activa cuando hay al menos un objeto de la clase Usuario en la memoria de trabajo
+rule "R2 - Objeto usuario mayor de edad"
+    when
+        $user : User(age >= 18 )
+    then
+        System.out.println("R2: El usuario " + $user.name +" es mayor de edad y se encuentra en la memoria de trabajo." );
+end
+
+//R3: Se activa cuando hay al menos un objeto de la clase Usuario mayor de 18 años y un objeto de la clase Kart del tipo 'Mach 8'   
+rule "R3 - Usuario mayor de edad + Kart Mach 8"
+    when
+        $user : User(age >= 18 )
+        $kart : Kart(type == "Mach 8")
+    then
+        System.out.println("R3: El usuario " + $user.name +" y el Kart tipo " + $kart.type+" se encuentran en la memoria de trabajo." );
+end
+
+//R4: Se activa cuando hay al menos un objeto de la clase Usuario con el nombre 'Mario Bros' y mayor de 18 años   
+rule "R4 - Mario Bros mayor de edad"
+    when
+        $user : User(name == "Mario Bros", age >= 18 )
+    then
+        System.out.println("R4: " + $user.name +" existe, es mayor de edad y se encuentra en la memoria de trabajo." );
+end

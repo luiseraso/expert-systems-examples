@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>edu.fup.ims</groupId>
+    <artifactId>ims-examples-expert-systems</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>ims-examples-drools</artifactId>
+  <name>ims-examples-drools</name>
+  <description>Basic examples that demonstrates how to use Drools API version 6</description>
+  
+  	<properties>
+		<drools.version>6.1.0.Final</drools.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-bom</artifactId>
+				<type>pom</type>
+				<version>${drools.version}</version>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency> 
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-jdk14</artifactId>
+		  <version>1.7.10</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+  
+  
+</project>

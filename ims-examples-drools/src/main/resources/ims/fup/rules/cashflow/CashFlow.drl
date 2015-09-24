@@ -1,0 +1,34 @@
+package edu.fup.ims.examples.cashflow;
+dialect  "mvel"
+
+rule "Increase balance for AccountPeriod Credits" agenda-group "calculation"
+when
+   ap : AccountPeriod( )
+   $acc : Account( )
+   cf : CashFlow( type == CashFlowType.CREDIT,
+             accountNo == $acc.accountNo,
+             date >= ap.start && <= ap.end )
+then
+   $acc.balance = $acc.balance + cf.amount;
+   System.out.println( "Increasing balance for Account Number " +  $acc.accountNo +" in " + cf.amount);
+end
+
+rule "Decrease balance for AccountPeriod Debits" agenda-group "calculation"
+when
+   ap : AccountPeriod( )
+   $acc : Account( )
+   cf : CashFlow( type == CashFlowType.DEBIT, 
+   			accountNo == $acc.accountNo, 
+   			date >= ap.start && <= ap.end )
+then
+   $acc.balance = $acc.balance - cf.amount;
+   System.out.println( "Decreasing balance for Account Number " +  $acc.accountNo +" in " + cf.amount);
+end
+
+rule "Print blance for AccountPeriod" agenda-group "report"
+when
+       ap : AccountPeriod()
+       $acc : Account( )
+then
+       System.out.println( "Account Number " + $acc.accountNo + " balance " + $acc.balance );
+end
